@@ -1,0 +1,6 @@
+[
+  {
+    "name": "Debate baseline",
+    "query": "WITH role_results AS (\n  SELECT participants.pro_debater AS id, 'Pro' AS debate_role,\n         res.pro_debater.total_score AS total_score,\n         CASE WHEN res.winner = 'pro_debater' THEN 1 ELSE 0 END AS won\n  FROM results\n  CROSS JOIN UNNEST(results.results) AS t(res)\n  WHERE results.status = 'completed'\n  UNION ALL\n  SELECT participants.con_debater AS id, 'Con' AS debate_role,\n         res.con_debater.total_score AS total_score,\n         CASE WHEN res.winner = 'con_debater' THEN 1 ELSE 0 END AS won\n  FROM results\n  CROSS JOIN UNNEST(results.results) AS t(res)\n  WHERE results.status = 'completed'\n)\nSELECT id,\n       COUNT(*) AS \"Role appearances\",\n       SUM(won) AS \"Wins\",\n       ROUND(100.0 * AVG(won), 1) AS \"Win rate (%)\",\n       ROUND(AVG(total_score), 3) AS \"Mean judge total\"\nFROM role_results\nWHERE id IS NOT NULL AND id <> ''\nGROUP BY id\nORDER BY \"Win rate (%)\" DESC, \"Mean judge total\" DESC, id"
+  }
+]

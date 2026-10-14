@@ -1,0 +1,51 @@
+{
+  "manifest_version": "0.1.0",
+  "program": {
+    "image": "ghcr.io/ericxtang/agentbeats-tutorial-debater@sha256:1fd6141e2daebd30321038f75559f440023ce0c5917536803943aa4ec5206ea8",
+    "entrypoint": [
+      "/home/agentbeats/tutorial/.venv/bin/python",
+      "/home/agentbeats/tutorial/scenarios/debate/debater/src/server.py",
+      "--host",
+      "0.0.0.0",
+      "--port",
+      "9019",
+      "--card-url",
+      "http://127.0.0.1:9019/"
+    ],
+    "env": {
+      "GOOGLE_API_KEY": "${config.google_api_key}",
+      "GOOGLE_GENAI_USE_VERTEXAI": "FALSE",
+      "PYTHONUNBUFFERED": "1"
+    },
+    "network": {
+      "endpoints": [
+        {
+          "name": "a2a",
+          "port": 9019
+        }
+      ]
+    }
+  },
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "google_api_key": {
+        "type": "string",
+        "secret": true
+      }
+    },
+    "required": [
+      "google_api_key"
+    ],
+    "additionalProperties": false
+  },
+  "provides": {
+    "a2a": {
+      "kind": "a2a",
+      "endpoint": "a2a"
+    }
+  },
+  "exports": {
+    "a2a": "a2a"
+  }
+}

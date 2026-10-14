@@ -1,0 +1,51 @@
+{
+  "manifest_version": "0.1.0",
+  "program": {
+    "image": "ghcr.io/ericxtang/agentbeats-tutorial-debate-judge@sha256:084d0d14f834fd2bb5a22e2347dfdb423188437c3b98e758fb5b1e76e979908c",
+    "entrypoint": [
+      "/home/agentbeats/tutorial/.venv/bin/python",
+      "/home/agentbeats/tutorial/scenarios/debate/judge/src/server.py",
+      "--host",
+      "0.0.0.0",
+      "--port",
+      "9009",
+      "--card-url",
+      "http://127.0.0.1:9009/"
+    ],
+    "env": {
+      "GOOGLE_API_KEY": "${config.google_api_key}",
+      "GOOGLE_GENAI_USE_VERTEXAI": "FALSE",
+      "PYTHONUNBUFFERED": "1"
+    },
+    "network": {
+      "endpoints": [
+        {
+          "name": "a2a",
+          "port": 9009
+        }
+      ]
+    }
+  },
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "google_api_key": {
+        "type": "string",
+        "secret": true
+      }
+    },
+    "required": [
+      "google_api_key"
+    ],
+    "additionalProperties": false
+  },
+  "provides": {
+    "a2a": {
+      "kind": "a2a",
+      "endpoint": "a2a"
+    }
+  },
+  "exports": {
+    "a2a": "a2a"
+  }
+}
