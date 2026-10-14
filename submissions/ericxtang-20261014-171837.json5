@@ -1,0 +1,79 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "google_api_key": {
+        "type": "string",
+        "secret": true
+      }
+    },
+    "required": [
+      "google_api_key"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/tags/v0.3/amber-manifest.json5",
+      "config": {
+        "assessment_config": {
+          "topic": "Should artificial intelligence be regulated?",
+          "num_rounds": 1
+        },
+        "participant_roles": {
+          "green": "debate_judge",
+          "purple1": "pro_debater",
+          "purple2": "con_debater"
+        }
+      }
+    },
+    "debate_judge": {
+      "manifest": "https://raw.githubusercontent.com/ericxtang/agentbeats-debate-leaderboard/c0f18e08d573cf3b7671cc99b718ad67644456a1/green-agent.json5",
+      "config": {
+        "google_api_key": "${config.google_api_key}"
+      }
+    },
+    "pro_debater": {
+      "manifest": "https://raw.githubusercontent.com/ericxtang/agentbeats-debate-leaderboard/2ea4c0777cf07ddfa109b8499b620abc80591cf9/debater.json5",
+      "config": {
+        "google_api_key": "${config.google_api_key}"
+      }
+    },
+    "con_debater": {
+      "manifest": "https://raw.githubusercontent.com/ericxtang/agentbeats-debate-leaderboard/2ea4c0777cf07ddfa109b8499b620abc80591cf9/debater.json5",
+      "config": {
+        "google_api_key": "${config.google_api_key}"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#debate_judge.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#pro_debater.a2a"
+    },
+    {
+      "to": "#gateway.purple2",
+      "from": "#con_debater.a2a"
+    },
+    {
+      "to": "#debate_judge.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "debate_judge": "01a13b58-14d3-70d0-b82a-3316b42c656b",
+      "pro_debater": "01a13b57-5eea-7580-97cd-5865213395b6",
+      "con_debater": "01a13b57-5eea-7580-97cd-5865213395b6"
+    }
+  }
+}

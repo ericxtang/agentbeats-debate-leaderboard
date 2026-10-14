@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "participants": {
+    "debate_judge": "01a13b58-14d3-70d0-b82a-3316b42c656b",
+    "pro_debater": "01a13b57-5eea-7580-97cd-5865213395b6",
+    "con_debater": "01a13b57-5eea-7580-97cd-5865213395b6"
+  },
+  "results": [
+    {
+      "pro_debater": {
+        "emotional_appeal": 0.85,
+        "argument_clarity": 0.9,
+        "argument_arrangement": 0.9,
+        "relevance_to_topic": 0.95,
+        "total_score": 3.6
+      },
+      "con_debater": {
+        "emotional_appeal": 0.8,
+        "argument_clarity": 0.85,
+        "argument_arrangement": 0.85,
+        "relevance_to_topic": 0.9,
+        "total_score": 3.4
+      },
+      "winner": "pro_debater",
+      "reason": "The pro_debater presented a compelling and well-structured case utilizing strong analogies, such as the seatbelt comparison, to effectively counter the idea that regulation stifles all innovation. Their arguments addressed fundamental rights, safety, and market incentives clearly, keeping a high degree of relevance to the core topic."
+    }
+  ]
+}
