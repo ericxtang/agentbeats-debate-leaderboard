@@ -59,6 +59,11 @@
     {
       "to": "#gateway.purple2",
       "from": "#con_debater.a2a"
+    },
+    {
+      "to": "#debate_judge.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
     }
   ],
   "exports": {

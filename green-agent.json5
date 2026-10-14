@@ -15,7 +15,8 @@
     "env": {
       "GOOGLE_API_KEY": "${config.google_api_key}",
       "GOOGLE_GENAI_USE_VERTEXAI": "FALSE",
-      "PYTHONUNBUFFERED": "1"
+      "PYTHONUNBUFFERED": "1",
+      "PROXY_URL": "${slots.proxy.url}"
     },
     "network": {
       "endpoints": [
@@ -47,5 +48,20 @@
   },
   "exports": {
     "a2a": "a2a"
+  },
+  "slots": {
+    "proxy": {
+      "kind": "a2a"
+    }
+  },
+  "metadata": {
+    "assessment_config": {
+      "num_rounds": 1,
+      "topic": "Should artificial intelligence be regulated?"
+    },
+    "participant_roles": [
+      "pro_debater",
+      "con_debater"
+    ]
   }
 }
