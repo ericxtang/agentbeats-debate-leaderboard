@@ -1,0 +1,24 @@
+{
+  "image_digests": {
+    "/con_debater": "ghcr.io/ericxtang/agentbeats-tutorial-debater@sha256:1fd6141e2daebd30321038f75559f440023ce0c5917536803943aa4ec5206ea8",
+    "/debate_judge": "ghcr.io/ericxtang/agentbeats-tutorial-debate-judge@sha256:084d0d14f834fd2bb5a22e2347dfdb423188437c3b98e758fb5b1e76e979908c",
+    "/gateway": "ghcr.io/rdi-foundation/agentbeats-gateway@sha256:3f9976889c598092dc4273312ec431cbc48bbe064ff65b5613425f4990bc1d4c",
+    "/pro_debater": "ghcr.io/ericxtang/agentbeats-tutorial-debater@sha256:1fd6141e2daebd30321038f75559f440023ce0c5917536803943aa4ec5206ea8"
+  },
+  "manifest_digests": {
+    "/": "sha256:8iVpQUG1IzhiwNoSX/N073F9jH1hD5gKIdRFuw2skWw=",
+    "/con_debater": "sha256:gBsokNFIts68QcTr0c1bqxlVUgqcQLOXgpRQRf9HmZk=",
+    "/debate_judge": "sha256:5FDgDuTL75KDN8WxU60XBXQhP7A6XjPi5CgO4EvIKx0=",
+    "/gateway": "sha256:Ba99ymNGSymbrF9jGwLfnZaSnzPrw9sTJ5veaYMxV2Q=",
+    "/pro_debater": "sha256:gBsokNFIts68QcTr0c1bqxlVUgqcQLOXgpRQRf9HmZk="
+  },
+  "timestamp": "2026-10-14T17:17:52Z",
+  "github_actions": {
+    "run_url": "https://github.com/ericxtang/agentbeats-debate-leaderboard/actions/runs/38604866589",
+    "ref": "refs/heads/main",
+    "sha": "7e052c64272c673974c0f8f8204454b4af83095e",
+    "repository_url": "https://github.com/ericxtang/agentbeats-debate-leaderboard",
+    "workflow_ref": "ericxtang/agentbeats-debate-leaderboard/.github/workflows/run-scenario.yml@refs/heads/main",
+    "workflow_sha": "7e052c64272c673974c0f8f8204454b4af83095e"
+  }
+}
