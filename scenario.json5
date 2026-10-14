@@ -29,19 +29,19 @@
       }
     },
     "debate_judge": {
-      "manifest": "./green-agent.json5",
+      "manifest": "https://raw.githubusercontent.com/ericxtang/agentbeats-debate-leaderboard/c0f18e08d573cf3b7671cc99b718ad67644456a1/green-agent.json5",
       "config": {
         "google_api_key": "${config.google_api_key}"
       }
     },
     "pro_debater": {
-      "manifest": "./debater.json5",
+      "manifest": "https://raw.githubusercontent.com/ericxtang/agentbeats-debate-leaderboard/2ea4c0777cf07ddfa109b8499b620abc80591cf9/debater.json5",
       "config": {
         "google_api_key": "${config.google_api_key}"
       }
     },
     "con_debater": {
-      "manifest": "./debater.json5",
+      "manifest": "https://raw.githubusercontent.com/ericxtang/agentbeats-debate-leaderboard/2ea4c0777cf07ddfa109b8499b620abc80591cf9/debater.json5",
       "config": {
         "google_api_key": "${config.google_api_key}"
       }
